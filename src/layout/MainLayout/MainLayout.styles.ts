@@ -1,13 +1,6 @@
-import LandingPage from "../page/MainPage";
-import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 import styled from "styled-components";
 import { Fonts } from "styles/Namespace/Fonts.ts";
-
-const MainLayout = () => (
-  <LayoutSC>
-    <LandingPage />
-  </LayoutSC>
-);
+import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 
 const LayoutSC = styled.div`
   width: 100%;
@@ -18,4 +11,6 @@ const LayoutSC = styled.div`
   background: ${ColorsScheme.BACKDOOR};
 `;
 
-export default MainLayout;
+export const styles = {
+  LayoutSC,
+};

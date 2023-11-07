@@ -1,4 +1,4 @@
-import MainLayout from "layout/MainLayout.tsx";
+import MainLayout from "layout/MainLayout";
 
 const App = () => (
   <>

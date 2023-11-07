@@ -1,8 +1,8 @@
 import LandingPage from "../page/MainPage";
-import { ColorsNamespace } from "styles/Namespace/ColorsNamespace.ts";
+import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 
 const MainLayout = () => (
-  <div style={{ background: ColorsNamespace.BACKDOOR }}>
+  <div style={{ background: ColorsScheme.BACKDOOR }}>
     <LandingPage />
   </div>
 );

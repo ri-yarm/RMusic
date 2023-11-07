@@ -1,4 +1,4 @@
-export enum ColorsNamespace {
+export enum ColorsScheme {
   BACKDOOR = "#1A1A1A",
   MAIN = "#1F1F1F",
   WHITE = "#FFFFFF",

@@ -1,5 +1,5 @@
 import LandingPage from "../page/MainPage";
-import { ColorsNamespace } from "lib/Namespace/ColorsNamespace.ts";
+import { ColorsNamespace } from "styles/Namespace/ColorsNamespace.ts";
 
 const MainLayout = () => (
   <div style={{ background: ColorsNamespace.BACKDOOR }}>

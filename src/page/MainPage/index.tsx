@@ -1,9 +1,11 @@
 import React from "react";
 import { styles } from "./MainPage.styles.ts";
+import Aside from "components/Aside";
 
 const LandingPage = () => (
   <SectionSC>
-    <h1>page</h1>
+    <Aside />
+    {/*<h1>page</h1>*/}
   </SectionSC>
 );
 

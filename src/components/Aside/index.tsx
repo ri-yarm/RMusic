@@ -1,7 +1,7 @@
 import React from "react";
+import { style } from "components/Aside/Aside.styles.ts";
 import AsideMenuPanel from "components/Aside/AsideMenuPanel";
 import AsidePlaylistPanel from "components/Aside/AsidePlaylistPanel";
-import styled from "styled-components";
 
 const Aside = () => (
   <ContainerSC>
@@ -10,6 +10,6 @@ const Aside = () => (
   </ContainerSC>
 );
 
-const ContainerSC = styled.aside``;
+const { ContainerSC } = style;
 
 export default React.memo(Aside);

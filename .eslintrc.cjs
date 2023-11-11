@@ -8,7 +8,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs',],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'prettier',
+  plugins: ['react-refresh', 'prettier', "simple-import-sort",
     '@typescript-eslint'],
   rules: {
     "prettier/prettier": "error",
@@ -17,6 +17,31 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "off",
-  },
 
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        groups: [
+          ["^react", "^@?\\w"],
+          ["^\\u0000"],
+          ["^@app?\\w"],
+          ["^@app/components?\\w"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+        ],
+      },
+    ],
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: false,
+        ignoreMemberSort: true,
+        memberSyntaxSortOrder: ["none", "all", "single", "multiple"],
+        ignoreDeclarationSort: true,
+        allowSeparatedGroups: true,
+      },
+    ],
+    //! END - eslint-plugin-simple-import-sort ?//
+  },
 }

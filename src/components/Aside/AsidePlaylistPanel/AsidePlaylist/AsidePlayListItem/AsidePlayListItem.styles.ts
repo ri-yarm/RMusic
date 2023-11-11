@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const ContainerSC = styled.article`
+  padding: 2px 0;
+
   display: flex;
 `;
 

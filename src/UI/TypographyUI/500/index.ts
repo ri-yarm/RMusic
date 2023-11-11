@@ -6,7 +6,7 @@ const T500 = styled("p")<{ color?: string }>`
   ${mix};
   font-weight: 500;
 
-  color: ${(props) => props.color || ColorsScheme.WHITE};
+  color: ${({ color }) => color || ColorsScheme.WHITE};
 `;
 
 export default T500;

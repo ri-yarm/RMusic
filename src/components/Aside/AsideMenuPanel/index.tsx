@@ -1,9 +1,9 @@
 import React from "react";
-import { styles } from "components/Aside/MenuSidePanel/MenuSidePanel.styles.ts";
+import { styles } from "components/Aside/AsideMenuPanel/MenuSidePanel.styles.ts";
 import { asideMock } from "lib/mock/Aside/asideMock.ts";
 import T600 from "UI/TypographyUI/600";
 
-const MenuSidePanel = () => (
+const AsideMenuPanel = () => (
   <ContainerSC>
     <ListSC>
       {asideMock.map((item, index) => (
@@ -18,4 +18,4 @@ const MenuSidePanel = () => (
 
 const { ContainerSC, ListSC, LiSC } = styles;
 
-export default React.memo(MenuSidePanel);
+export default React.memo(AsideMenuPanel);

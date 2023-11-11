@@ -1,5 +1,5 @@
 import React from "react";
-import MenuSidePanel from "components/Aside/MenuSidePanel";
+import MenuSidePanel from "components/Aside/AsideMenuPanel";
 import styled from "styled-components";
 
 const Aside = () => (

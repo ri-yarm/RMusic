@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import ListMusicIcon from "assets/icons/common/listMusicIcon.svg";
 import SearchIcon from "assets/icons/common/searchIcon.svg";
 import PlucIcon from "assets/icons/common/plusIcon.svg";
-import T600 from "UI/TypographyUI/600";
+import T600 from "UI/TypographyUI/TitleUI/600";
+import { styles } from "components/Aside/AsidePlaylistPanel/AsideTopContainer/AsideTopContainer.styles.ts";
 
 const TopContainer = () => (
   <ContainerSC>
@@ -18,15 +18,6 @@ const TopContainer = () => (
   </ContainerSC>
 );
 
-const ContainerSC = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const ListSC = styled.ul<{ gap: number }>`
-  display: flex;
-  gap: ${({ gap }) => `${gap}px`};
-`;
+const { ContainerSC, ListSC } = styles;
 
 export default React.memo(TopContainer);

@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "components/Aside/AsideMenuPanel/MenuSidePanel.styles.ts";
 import { asideMenuMock } from "lib/mock/Aside/asideMenuMock.ts";
-import T600 from "UI/TypographyUI/600";
+import T600 from "UI/TypographyUI/TitleUI/600";
 
 const AsideMenuPanel = () => (
   <ContainerSC>

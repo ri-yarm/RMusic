@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
-import { mix } from "UI/TypographyUI";
+import { mix } from "UI/TypographyUI/TitleUI";
 
 const T600 = styled("p")<{ color?: string }>`
   ${mix};

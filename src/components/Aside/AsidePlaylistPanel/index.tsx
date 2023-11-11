@@ -1,11 +1,15 @@
 import React from "react";
-import TopContainer from "components/Aside/AsidePlaylistPanel/TopContainer";
+import TopContainer from "components/Aside/AsidePlaylistPanel/AsideTopContainer";
+import { styles } from "components/Aside/AsidePlaylistPanel/index.styles.ts";
 
-const AsidePlaylistPanel = () => {
+const AsideTopContainer = () => {
   return (
-    <>
+    <ContainerSC>
       <TopContainer />
-    </>
+    </ContainerSC>
   );
 };
-export default React.memo(AsidePlaylistPanel);
+
+const { ContainerSC } = styles;
+
+export default React.memo(AsideTopContainer);

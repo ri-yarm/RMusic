@@ -1,11 +1,11 @@
 import React from "react";
-import MenuSidePanel from "components/Aside/AsideMenuPanel";
-import styled from "styled-components";
+import AsideMenuPanel from "components/Aside/AsideMenuPanel";
 import AsidePlaylistPanel from "components/Aside/AsidePlaylistPanel";
+import styled from "styled-components";
 
 const Aside = () => (
   <ContainerSC>
-    <MenuSidePanel />
+    <AsideMenuPanel />
     <AsidePlaylistPanel />
   </ContainerSC>
 );

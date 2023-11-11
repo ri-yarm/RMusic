@@ -1,8 +1,8 @@
 import React from "react";
 import { styles } from "components/Aside/AsidePlaylistPanel/AsidePlaylist/AsidePlayListItem/AsidePlayListItem.styles.ts";
-import T600 from "UI/TypographyUI/TitleUI/600";
-import P500 from "UI/TypographyUI/ParagraphUI";
 import { AsidePlayListItemProps } from "components/Aside/AsidePlaylistPanel/AsidePlaylist/AsidePlayListItem/types.ts";
+import P500 from "UI/TypographyUI/ParagraphUI";
+import T600 from "UI/TypographyUI/TitleUI/600";
 
 const AsidePlayListItem = ({ title, image, info }: AsidePlayListItemProps) => (
   <ContainerSC>

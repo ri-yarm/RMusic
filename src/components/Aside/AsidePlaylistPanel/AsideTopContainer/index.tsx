@@ -1,9 +1,9 @@
 import React from "react";
 import ListMusicIcon from "assets/icons/common/listMusicIcon.svg";
-import SearchIcon from "assets/icons/common/searchIcon.svg";
 import PlucIcon from "assets/icons/common/plusIcon.svg";
-import T600 from "UI/TypographyUI/TitleUI/600";
+import SearchIcon from "assets/icons/common/searchIcon.svg";
 import { styles } from "components/Aside/AsidePlaylistPanel/AsideTopContainer/AsideTopContainer.styles.ts";
+import T600 from "UI/TypographyUI/TitleUI/600";
 
 const TopContainer = () => (
   <ContainerSC>

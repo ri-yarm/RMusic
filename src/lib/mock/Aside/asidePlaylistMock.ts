@@ -1,12 +1,12 @@
-import howStartImg from "assets/images/AsidePlayList/HowStartPodcast.jpg";
-import LateNightImg from "assets/images/AsidePlayList/LateNightHorror.jpg";
+import BeBetterGolfImg from "assets/images/AsidePlayList/BeBetterGolf.jpg";
 import BusinessImpImg from "assets/images/AsidePlayList/BussinessImp.jpg";
 import ChitChatImg from "assets/images/AsidePlayList/ChitChat.jpg";
+import howStartImg from "assets/images/AsidePlayList/HowStartPodcast.jpg";
+import LateNightImg from "assets/images/AsidePlayList/LateNightHorror.jpg";
+import LoveStoryImg from "assets/images/AsidePlayList/LoveStory.jpg";
+import ParentingImg from "assets/images/AsidePlayList/Pareting.jpg";
 import ProGamerImg from "assets/images/AsidePlayList/ProGamer.jpg";
 import SmallTalkImg from "assets/images/AsidePlayList/SmallTalk.jpg";
-import ParentingImg from "assets/images/AsidePlayList/Pareting.jpg";
-import LoveStoryImg from "assets/images/AsidePlayList/LoveStory.jpg";
-import BeBetterGolfImg from "assets/images/AsidePlayList/BeBetterGolf.jpg";
 
 export const asidePlaylistMock = [
   {

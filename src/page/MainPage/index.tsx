@@ -1,6 +1,7 @@
 import React from "react";
-import { styles } from "./MainPage.styles.ts";
 import Aside from "components/Aside";
+
+import { styles } from "./MainPage.styles.ts";
 
 const LandingPage = () => (
   <SectionSC>

@@ -1,7 +1,7 @@
 import React from "react";
-import { asidePlaylistMock } from "lib/mock/Aside/asidePlaylistMock.ts";
-import AsidePlayListItem from "components/Aside/AsidePlaylistPanel/AsidePlaylist/AsidePlayListItem";
 import { styles } from "components/Aside/AsidePlaylistPanel/AsidePlaylist/AsidePlayList.styles.ts";
+import AsidePlayListItem from "components/Aside/AsidePlaylistPanel/AsidePlaylist/AsidePlayListItem";
+import { asidePlaylistMock } from "lib/mock/Aside/asidePlaylistMock.ts";
 
 const AsidePlayList = () => (
   <ContainerSC>

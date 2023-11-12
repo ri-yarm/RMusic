@@ -1,7 +1,8 @@
 import { css } from "styled-components";
+import { Sizes } from "styles/Namespace/Sizes.ts";
 
 export const mix = css`
-  font-size: 16px;
+  font-size: ${Sizes.DEFAULT}px;
   font-style: normal;
   line-height: normal;
 `;

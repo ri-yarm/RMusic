@@ -4,14 +4,8 @@ const ContainerSC = styled.article`
   padding: 2px 0;
 
   display: flex;
-`;
 
-const ImgSC = styled.img`
-  margin-right: 10px;
-
-  border-radius: 10px;
-
-  object-fit: contain;
+  cursor: pointer;
 `;
 
 const TextContainerSC = styled.div`
@@ -20,4 +14,4 @@ const TextContainerSC = styled.div`
   justify-content: space-around;
 `;
 
-export const styles = { ContainerSC, ImgSC, TextContainerSC };
+export const styles = { ContainerSC, TextContainerSC };

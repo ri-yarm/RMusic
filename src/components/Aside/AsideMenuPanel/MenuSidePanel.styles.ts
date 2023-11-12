@@ -27,10 +27,4 @@ const LiSC = styled.li`
   align-items: center;
 `;
 
-const TitleSC = styled.h6`
-  color: ${ColorsScheme.WHITE};
-  font-size: 16px;
-  font-weight: 600;
-`;
-
-export const styles = { ContainerSC, ListSC, LiSC, TitleSC };
+export const styles = { ContainerSC, ListSC, LiSC };

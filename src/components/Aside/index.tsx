@@ -1,13 +1,15 @@
 import React from "react";
-import MenuSidePanel from "components/Aside/MenuSidePanel";
-import styled from "styled-components";
+import { style } from "components/Aside/Aside.styles.ts";
+import AsideMenuPanel from "components/Aside/AsideMenuPanel";
+import AsidePlaylistPanel from "components/Aside/AsidePlaylistPanel";
 
 const Aside = () => (
   <ContainerSC>
-    <MenuSidePanel />
+    <AsideMenuPanel />
+    <AsidePlaylistPanel />
   </ContainerSC>
 );
 
-const ContainerSC = styled.aside``;
+const { ContainerSC } = style;
 
 export default React.memo(Aside);

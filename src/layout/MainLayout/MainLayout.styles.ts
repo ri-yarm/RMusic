@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Fonts } from "styles/Namespace/Fonts.ts";
 import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
+import { Fonts } from "styles/Namespace/Fonts.ts";
 
 const LayoutSC = styled.div`
   width: 100%;

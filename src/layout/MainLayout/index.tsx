@@ -1,7 +1,8 @@
-import LandingPage from "../../page/MainPage";
 import { styles } from "layout/MainLayout/MainLayout.styles.ts";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, theme } from "styles/styles.ts";
+
+import LandingPage from "../../page/MainPage";
 
 const MainLayout = () => (
   <LayoutSC>

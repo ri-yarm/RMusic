@@ -12,10 +12,15 @@ export const GlobalStyles = createGlobalStyle`
   ul, ol {
     margin: 0;
     padding: 0;
+    list-style-type: none;
   }
   
   h1, h2, h3, h4, h5, h6, p {
     padding: 0;
     margin: 0;
+  }
+  
+  button {
+    border: none;
   }
 `;

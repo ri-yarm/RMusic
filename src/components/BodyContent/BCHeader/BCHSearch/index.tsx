@@ -1,12 +1,12 @@
 import React from "react";
 import SearchIcon from "assets/icons/common/searchIcon.svg";
 import { styles } from "components/BodyContent/BCHeader/BCHSearch/BCHSearch.styles.ts";
-import { BDInputPlaceholders } from "lib/mock/BodyContent/BDInputPlaceholders.ts";
+import { BDInputPlaceholdersMock } from "lib/mock/BodyContent/BDInputPlaceholdersMock.ts";
 
 const BCHSearch = () => (
   <ContainerSC>
     <SearchIcon />
-    <InputSC placeholder={BDInputPlaceholders.listen} />
+    <InputSC placeholder={BDInputPlaceholdersMock.listen} />
   </ContainerSC>
 );
 

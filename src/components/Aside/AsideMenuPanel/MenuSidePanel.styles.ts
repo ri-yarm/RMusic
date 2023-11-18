@@ -25,6 +25,8 @@ const LiSC = styled.li`
 
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 `;
 
 export const styles = { ContainerSC, ListSC, LiSC };

@@ -8,7 +8,6 @@ const LandingPage = () => (
   <SectionSC>
     <Aside />
     <BodyContent />
-    {/*<h1>page</h1>*/}
   </SectionSC>
 );
 

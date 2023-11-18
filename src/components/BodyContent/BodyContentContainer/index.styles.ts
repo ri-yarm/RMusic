@@ -7,4 +7,8 @@ const ContainerSC = styled.section`
   gap: 20px;
 `;
 
-export const styles = { ContainerSC };
+const FlexContainerSC = styled.section`
+  flex: 1;
+`;
+
+export const styles = { ContainerSC, FlexContainerSC };

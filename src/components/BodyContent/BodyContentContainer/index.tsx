@@ -6,12 +6,14 @@ import { styles } from "components/BodyContent/BodyContentContainer/index.styles
 
 const BodyContentContainer = () => (
   <ContainerSC>
-    <BCCControl />
-    <BCCPlayList />
+    <FlexContainerSC>
+      <BCCControl />
+      <BCCPlayList />
+    </FlexContainerSC>
     <BCCAside />
   </ContainerSC>
 );
 
-const { ContainerSC } = styles;
+const { ContainerSC, FlexContainerSC } = styles;
 
 export default React.memo(BodyContentContainer);

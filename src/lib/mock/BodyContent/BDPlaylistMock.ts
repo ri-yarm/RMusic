@@ -3,6 +3,17 @@ import HowMakeImg from "assets/images/BodyContent/BCPlaylist/HowMake.jpg";
 import InvestPodcastImg from "assets/images/BodyContent/BCPlaylist/InvestPodcast.jpg";
 import InviteFriendsImg from "assets/images/BodyContent/BCPlaylist/InviteFriends.jpg";
 
+export interface BDPlaylistData {
+  img: string;
+  title: string;
+  author: string;
+  playlist: string;
+  listeners: string;
+  time: string;
+}
+
+export type BDPlaylistDataArr = BDPlaylistData[];
+
 export const BDPlaylistMock = [
   {
     img: FindTopicImg,
@@ -27,6 +38,62 @@ export const BDPlaylistMock = [
     playlist: "How to Start Podcast",
     listeners: "1,212",
     time: "12:11",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
+  },
+  {
+    img: InvestPodcastImg,
+    title: "Invest in podcast tools",
+    author: "Ken Adams",
+    playlist: "How to Start Podcast",
+    listeners: "3,123",
+    time: "18:31",
   },
   {
     img: InvestPodcastImg,

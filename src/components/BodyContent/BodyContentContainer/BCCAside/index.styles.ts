@@ -6,6 +6,8 @@ const ContainerSC = styled.aside`
   padding: 20px;
 
   width: 100%;
+
+  max-height: 372px;
   max-width: 280px;
 
   background: ${ColorsScheme.MAIN};

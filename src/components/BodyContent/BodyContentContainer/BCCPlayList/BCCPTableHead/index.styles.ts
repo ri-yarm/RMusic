@@ -15,6 +15,10 @@ const ContainerSC = styled.thead`
     border-bottom: 1px solid ${ColorsScheme.GRAY};
   }
 
+  th:nth-child(1) {
+    width: 7%;
+  }
+
   th:nth-child(3) {
     width: 35%;
   }

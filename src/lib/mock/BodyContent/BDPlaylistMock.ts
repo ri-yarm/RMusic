@@ -3,6 +3,17 @@ import HowMakeImg from "assets/images/BodyContent/BCPlaylist/HowMake.jpg";
 import InvestPodcastImg from "assets/images/BodyContent/BCPlaylist/InvestPodcast.jpg";
 import InviteFriendsImg from "assets/images/BodyContent/BCPlaylist/InviteFriends.jpg";
 
+export interface BDPlaylistData {
+  img: string;
+  title: string;
+  author: string;
+  playlist: string;
+  listeners: string;
+  time: string;
+}
+
+export type BDPlaylistDataArr = BDPlaylistData[];
+
 export const BDPlaylistMock = [
   {
     img: FindTopicImg,

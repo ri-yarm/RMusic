@@ -3,13 +3,13 @@ import React from "react";
 // import BCHeader from "components/BodyContent/BCHeader";
 import { style } from "components/BodyContent/BodyContent.styles.ts";
 // import BodyContentContainer from "components/BodyContent/BodyContentContainer";
-import AudioPlayer from "components/player.tsx";
+// import AudioPlayer from "components/test.tsx";
 
 const BodyContent = () => (
   <ContainerSC>
     {/*<BCHeader />*/}
     {/*<BCBanner />*/}
-    <AudioPlayer />
+    {/*<AudioPlayer />*/}
     {/*<BodyContentContainer />*/}
   </ContainerSC>
 );

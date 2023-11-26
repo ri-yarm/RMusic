@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Howl } from "howler";
 
-const AudioPlayer = () => {
+const AudioPlayerTest = () => {
   const [sound, setSound] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
@@ -105,4 +105,4 @@ const AudioPlayer = () => {
   );
 };
 
-export default React.memo(AudioPlayer);
+export default React.memo(AudioPlayerTest);

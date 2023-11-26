@@ -33,40 +33,8 @@ const InfoContainerSC = styled.div`
   align-items: center;
 `;
 
-const TextContainerSC = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const ControlContainerSC = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 30px;
-`;
-
-const DurationContainerSC = styled.div`
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const VolumeContainerSC = styled.div`
-  display: flex;
-  align-items: center;
-
-  width: 100%;
-  max-width: 140px;
-`;
-
 export const styles = {
   ContainerSC,
   ImgSC,
   InfoContainerSC,
-  TextContainerSC,
-  ControlContainerSC,
-  DurationContainerSC,
-  VolumeContainerSC,
 };

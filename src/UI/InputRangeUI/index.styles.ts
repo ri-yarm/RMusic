@@ -3,7 +3,8 @@ import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 
 const RangeInput = styled.input`
   height: 5px;
-  width: min(100%, 500px);
+  //width: min(100%, 500px);
+  width: 100%;
 
   padding: 5px 14px;
 

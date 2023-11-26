@@ -17,7 +17,7 @@ const ContainerSC = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
 
-  border-radius: calc(${Sizes.DEFAULT}px + 4px);
+  border-radius: calc(${Sizes.DEFAULT}px + 8px);
 
   cursor: pointer;
 

@@ -1,5 +1,6 @@
 import React from "react";
 import NextStepIcon from "assets/icons/player/nextStepIcon.svg";
+import PauseIcon from "assets/icons/player/pauseIcon.svg";
 import PlayIcon from "assets/icons/player/playIcon.svg";
 import PrevStepIcon from "assets/icons/player/prevStepIcon.svg";
 import RepeatIcon from "assets/icons/player/repeatIcon.svg";
@@ -8,20 +9,32 @@ import { styles } from "components/Player/PlayerControl/index.styles.ts";
 import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 import ButtonImgUI from "UI/ButtonUI/ButtonImgUI";
 
-const PlayerControl = () => (
+interface PlayerControlProps {
+  isPlaying: boolean;
+
+  handlePlayPause: () => void;
+  handleStop: () => void;
+}
+
+const PlayerControl = ({
+  handlePlayPause,
+  handleStop,
+  isPlaying,
+}: PlayerControlProps) => (
   <ContainerSC>
     <ButtonImgUI padding={0}>
       <ShuffleIcon />
     </ButtonImgUI>{" "}
-    <ButtonImgUI padding={0}>
+    <ButtonImgUI handleClick={handleStop} padding={0}>
       <PrevStepIcon />
     </ButtonImgUI>
     <ButtonImgUI
+      handleClick={handlePlayPause}
       background={ColorsScheme.VIOLET}
       borderRadius={100}
       styles={{ display: "flex", alignItems: "center" }}
       padding={15}>
-      <PlayIcon />
+      {isPlaying ? <PauseIcon /> : <PlayIcon />}
     </ButtonImgUI>
     <ButtonImgUI padding={0}>
       <NextStepIcon />

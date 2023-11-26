@@ -11,7 +11,7 @@ const AudioPlayerTest = () => {
 
   useEffect(() => {
     const sound = new Howl({
-      src: ["/russia.mp3"],
+      src: ["/music/Серёга - Черный бумер.mp3"],
       html5: true,
       onplay: () => {
         setIsPlaying(true);

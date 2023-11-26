@@ -10,6 +10,7 @@ export interface BDPlaylistData {
   playlist: string;
   listeners: string;
   time: string;
+  music: string;
 }
 
 export type BDPlaylistDataArr = BDPlaylistData[];
@@ -22,6 +23,7 @@ export const BDPlaylistMock = [
     playlist: "How to Start Podcast",
     listeners: "2,412",
     time: "08:12",
+    music: "Dabro - На часах ноль-ноль.mp3",
   },
   {
     img: InviteFriendsImg,
@@ -30,6 +32,7 @@ export const BDPlaylistMock = [
     playlist: "How to Start Podcast",
     listeners: "2,341",
     time: "18:11",
+    music: "GSPD - У России три пути.mp3",
   },
   {
     img: HowMakeImg,
@@ -38,6 +41,7 @@ export const BDPlaylistMock = [
     playlist: "How to Start Podcast",
     listeners: "1,212",
     time: "12:11",
+    music: "Моя Мишель - Зима в сердце.mp3",
   },
   {
     img: InvestPodcastImg,
@@ -46,61 +50,6 @@ export const BDPlaylistMock = [
     playlist: "How to Start Podcast",
     listeners: "3,123",
     time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
-  },
-  {
-    img: InvestPodcastImg,
-    title: "Invest in podcast tools",
-    author: "Ken Adams",
-    playlist: "How to Start Podcast",
-    listeners: "3,123",
-    time: "18:31",
+    music: "/Серёга - Черный бумер.mp3",
   },
 ];

@@ -5,8 +5,12 @@ import PlayAuthor from "components/Player/PlayerAuthor";
 import PlayerControl from "components/Player/PlayerControl";
 import PlayerRange from "components/Player/PlayerRange";
 import { Howl } from "howler";
+import { RootMusicDir } from "lib/constants";
+import { usePlayerStore } from "store/index.ts";
 
 const Player = () => {
+  const currentSong = usePlayerStore((state) => state.currentSong);
+
   const [sound, setSound] = useState<Howl | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.8);
@@ -14,8 +18,9 @@ const Player = () => {
 
   useEffect(() => {
     const sound = new Howl({
-      src: ["/music/Серёга - Черный бумер.mp3"],
+      src: [`${RootMusicDir}${currentSong}`],
       html5: true,
+
       onplay: () => {
         setIsPlaying(true);
       },
@@ -36,7 +41,7 @@ const Player = () => {
     return () => {
       sound.unload();
     };
-  }, []);
+  }, [currentSong]);
 
   useEffect(() => {
     // Обновляем ползунок каждые 100 миллисекунд
@@ -44,7 +49,7 @@ const Player = () => {
       if (sound && isPlaying) {
         setProgress(sound.seek() / sound.duration());
       }
-    }, 100);
+    }, 150);
 
     return () => {
       clearInterval(interval);

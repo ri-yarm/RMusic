@@ -2,6 +2,7 @@ import React from "react";
 import PlayIcon from "assets/icons/player/playIcon.svg";
 import { styles } from "components/BodyContent/BodyContentContainer/BCCPlayList/BCCPTableBody/BCCPTBItem/index.styles.ts";
 import { BDPlaylistData } from "lib/mock/BodyContent/BDPlaylistMock.ts";
+import { usePlayerStore } from "store/index.ts";
 import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 import ButtonImgUI from "UI/ButtonUI/ButtonImgUI";
 import T500 from "UI/TypographyUI/TitleUI/500";
@@ -13,11 +14,17 @@ const BCCPTBItem = ({
   img,
   author,
   playlist,
+  music,
 }: BDPlaylistData) => {
+  const setSong = usePlayerStore((state) => state.setSong);
+
   return (
     <ContainerSC>
       <td>
-        <ButtonImgUI borderRadius={100} padding={9}>
+        <ButtonImgUI
+          handleClick={() => setSong(music)}
+          borderRadius={100}
+          padding={9}>
           <PlayIcon />
         </ButtonImgUI>
       </td>

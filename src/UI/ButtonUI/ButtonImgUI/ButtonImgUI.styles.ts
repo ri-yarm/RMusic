@@ -4,6 +4,9 @@ import { Sizes } from "styles/Namespace/Sizes.ts";
 import { ButtonImgSCProps } from "UI/ButtonUI/ButtonImgUI/types.ts";
 
 const paddingMixin = css<ButtonImgSCProps>`
+  display: flex;
+  align-items: center;
+
   padding: ${({ padding }) =>
     Array.isArray(padding)
       ? padding.map((value) => `${value}px`).join(" ")

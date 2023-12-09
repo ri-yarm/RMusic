@@ -6,6 +6,7 @@ import PlayerControl from "components/Player/PlayerControl";
 import PlayerRange from "components/Player/PlayerRange";
 import { Howl } from "howler";
 import { RootMusicDir } from "lib/constants";
+import { formatDuration } from "lib/services/formatedTime.ts";
 import { usePlayerStore } from "store/index.ts";
 
 const Player = () => {
@@ -18,6 +19,7 @@ const Player = () => {
   const [sound, setSound] = useState<Howl | null>(null);
   const [volume, setVolume] = useState<number>(0.8);
   const [progress, setProgress] = useState<number>(0);
+  const [duration, setDuration] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -30,6 +32,8 @@ const Player = () => {
 
       onplay: () => {
         setIsPlay();
+        const duration = formatDuration(sound.duration());
+        setDuration(duration);
       },
       onpause: () => {
         setIsPause();
@@ -123,7 +127,11 @@ const Player = () => {
           handleStop={handleStop}
         />
         <PlayerRange
-          progress={{ value: progress, onChange: handleProgressChange }}
+          progress={{
+            value: progress,
+            onChange: handleProgressChange,
+            duration: duration,
+          }}
           volume={{
             value: volume,
             onChange: handleVolumeChange,

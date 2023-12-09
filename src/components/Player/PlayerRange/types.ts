@@ -7,7 +7,11 @@ export interface InputRangeVolumeProps extends InputRangeProps {
   handleMute: () => void;
 }
 
+export interface InputRangeProgressProps extends InputRangeProps {
+  duration: string | null;
+}
+
 export interface PlayerRangeProps {
-  progress: InputRangeProps;
+  progress: InputRangeProgressProps;
   volume: InputRangeVolumeProps;
 }

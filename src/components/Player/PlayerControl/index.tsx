@@ -14,18 +14,25 @@ interface PlayerControlProps {
 
   handlePlayPause: () => void;
   handleStop: () => void;
+  handlePrevSong: () => void;
+  handleNextSong: () => void;
 }
 
 const PlayerControl = ({
   handlePlayPause,
   handleStop,
   isPlaying,
+  handlePrevSong,
+  handleNextSong,
 }: PlayerControlProps) => (
   <ContainerSC>
     <ButtonImgUI padding={0}>
       <ShuffleIcon />
     </ButtonImgUI>{" "}
-    <ButtonImgUI handleClick={handleStop} padding={0}>
+    <ButtonImgUI
+      handleClick={handleStop}
+      padding={0}
+      handleDoubleClick={handlePrevSong}>
       <PrevStepIcon />
     </ButtonImgUI>
     <ButtonImgUI
@@ -36,7 +43,7 @@ const PlayerControl = ({
       padding={15}>
       {isPlaying ? <PauseIcon /> : <PlayIcon />}
     </ButtonImgUI>
-    <ButtonImgUI padding={0}>
+    <ButtonImgUI padding={0} handleClick={handleNextSong}>
       <NextStepIcon />
     </ButtonImgUI>
     <ButtonImgUI padding={0}>

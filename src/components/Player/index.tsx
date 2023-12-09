@@ -134,6 +134,20 @@ const Player = () => {
     }
   };
 
+  const playNextSong = () => {
+    const index = playlist.findIndex((song) => song.music === currentSong);
+    if (index !== -1 && index < playlist.length - 1) {
+      setCurrentSong(playlist[index + 1].music);
+    }
+  };
+
+  const playPreviousSong = () => {
+    const index = playlist.findIndex((song) => song.music === currentSong);
+    if (index > 0) {
+      setCurrentSong(playlist[index - 1].music);
+    }
+  };
+
   return (
     <ContainerSC haveMusic={!!currentSong}>
       <ImgSC src={CreateBusinessImg} />
@@ -143,6 +157,8 @@ const Player = () => {
           isPlaying={isPlaying}
           handlePlayPause={handlePlayPause}
           handleStop={handleStop}
+          handleNextSong={playNextSong}
+          handlePrevSong={playPreviousSong}
         />
         <PlayerRange
           progress={{

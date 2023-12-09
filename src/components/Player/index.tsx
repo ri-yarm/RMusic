@@ -6,15 +6,19 @@ import PlayerControl from "components/Player/PlayerControl";
 import PlayerRange from "components/Player/PlayerRange";
 import { Howl } from "howler";
 import { RootMusicDir } from "lib/constants";
+import { BDPlaylistMock } from "lib/mock/BodyContent/BDPlaylistMock.ts";
 import { formatDuration } from "lib/services/formatedTime.ts";
 import { usePlayerStore } from "store/index.ts";
 
 const Player = () => {
   const currentSong = usePlayerStore((state) => state.currentSong);
+  const setCurrentSong = usePlayerStore((state) => state.setSong);
 
   const isPlaying = usePlayerStore((state) => state.isPlaying);
   const setIsPlay = usePlayerStore((state) => state.setIsPlay);
   const setIsPause = usePlayerStore((state) => state.setIsPause);
+
+  const playlist = BDPlaylistMock;
 
   const [sound, setSound] = useState<Howl | null>(null);
   const [volume, setVolume] = useState<number>(0.8);
@@ -24,36 +28,45 @@ const Player = () => {
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
   useEffect(() => {
-    const sound = new Howl({
-      preload: true,
-      autoplay: true,
+    const index = playlist.findIndex((song) => song.music === currentSong);
 
-      src: [`${RootMusicDir}${currentSong}`],
-      html5: true,
+    if (index !== -1) {
+      const sound = new Howl({
+        preload: true,
+        autoplay: true,
+        src: [`${RootMusicDir}${currentSong}`],
+        html5: true,
 
-      onplay: () => {
-        setIsPlay();
-        const duration = formatDuration(sound.duration());
-        setDuration(duration);
-      },
-      onpause: () => {
-        setIsPause();
-      },
-      onend: () => {
-        setIsPause();
-        setProgress(0);
-      },
-      onseek: () => {
-        setProgress(sound.seek());
-      },
-    });
+        onplay: () => {
+          setIsPlay();
+          const duration = formatDuration(sound.duration());
+          setDuration(duration);
+        },
+        onpause: () => {
+          setIsPause();
+        },
+        onend: () => {
+          setIsPause();
+          setProgress(0);
 
-    setSound(sound);
+          // Воспроизводим следующую песню, если есть
+          if (index < playlist.length - 1) {
+            // Обновляем URL текущей песни
+            setCurrentSong(playlist[index + 1].music);
+          }
+        },
+        onseek: () => {
+          setProgress(sound.seek());
+        },
+      });
 
-    return () => {
-      sound.unload();
-    };
-  }, [currentSong]);
+      setSound(sound);
+
+      return () => {
+        sound.unload();
+      };
+    }
+  }, [currentSong, playlist, setIsPlay, setIsPause]);
 
   useEffect(() => {
     const interval = setInterval(() => {

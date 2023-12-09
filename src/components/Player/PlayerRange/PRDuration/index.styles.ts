@@ -8,4 +8,9 @@ const ContainerSC = styled.div`
   justify-content: center;
 `;
 
-export const styles = { ContainerSC };
+const TimeContainerSC = styled.div`
+  min-width: 40px;
+  max-width: 40px;
+`;
+
+export const styles = { ContainerSC, TimeContainerSC };

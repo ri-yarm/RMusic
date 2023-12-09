@@ -7,6 +7,8 @@ const paddingMixin = css<ButtonImgSCProps>`
   display: flex;
   align-items: center;
 
+  position: relative;
+
   padding: ${({ padding }) =>
     Array.isArray(padding)
       ? padding.map((value) => `${value}px`).join(" ")

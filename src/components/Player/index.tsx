@@ -26,6 +26,7 @@ const Player = () => {
   const [duration, setDuration] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState<boolean>(false);
+  const [isRepeat, setIsRepeat] = useState<boolean>(false);
 
   useEffect(() => {
     const index = playlist.findIndex((song) => song.music === currentSong);
@@ -49,10 +50,14 @@ const Player = () => {
           setIsPause();
           setProgress(0);
 
-          // Воспроизводим следующую песню, если есть
-          if (index < playlist.length - 1) {
-            // Обновляем URL текущей песни
-            setCurrentSong(playlist[index + 1].music);
+          // Если включен режим повтора, играйте снова ту же песню
+          if (isRepeat) {
+            sound.play();
+          } else {
+            // В противном случае воспроизводите следующую песню, если она доступна
+            if (index < playlist.length - 1) {
+              setCurrentSong(playlist[index + 1].music);
+            }
           }
         },
         onseek: () => {
@@ -148,6 +153,10 @@ const Player = () => {
     }
   };
 
+  const handleToggleRepeat = () => {
+    setIsRepeat(!isRepeat);
+  };
+
   return (
     <ContainerSC haveMusic={!!currentSong}>
       <ImgSC src={CreateBusinessImg} />
@@ -155,10 +164,12 @@ const Player = () => {
         <PlayAuthor />
         <PlayerControl
           isPlaying={isPlaying}
+          isRepeat={isRepeat}
           handlePlayPause={handlePlayPause}
           handleStop={handleStop}
           handleNextSong={playNextSong}
           handlePrevSong={playPreviousSong}
+          handleToggleRepeat={handleToggleRepeat}
         />
         <PlayerRange
           progress={{

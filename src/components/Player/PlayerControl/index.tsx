@@ -11,19 +11,24 @@ import ButtonImgUI from "UI/ButtonUI/ButtonImgUI";
 
 interface PlayerControlProps {
   isPlaying: boolean;
+  isRepeat: boolean;
 
   handlePlayPause: () => void;
   handleStop: () => void;
   handlePrevSong: () => void;
   handleNextSong: () => void;
+  handleToggleRepeat: () => void;
 }
 
 const PlayerControl = ({
+  isPlaying,
+  isRepeat,
+
   handlePlayPause,
   handleStop,
-  isPlaying,
   handlePrevSong,
   handleNextSong,
+  handleToggleRepeat,
 }: PlayerControlProps) => (
   <ContainerSC>
     <ButtonImgUI padding={0}>
@@ -46,12 +51,13 @@ const PlayerControl = ({
     <ButtonImgUI padding={0} handleClick={handleNextSong}>
       <NextStepIcon />
     </ButtonImgUI>
-    <ButtonImgUI padding={0}>
+    <ButtonImgUI padding={0} handleClick={handleToggleRepeat}>
       <RepeatIcon />
+      {isRepeat && <RepeatInfo />}
     </ButtonImgUI>
   </ContainerSC>
 );
 
-const { ContainerSC } = styles;
+const { ContainerSC, RepeatInfo } = styles;
 
 export default React.memo(PlayerControl);

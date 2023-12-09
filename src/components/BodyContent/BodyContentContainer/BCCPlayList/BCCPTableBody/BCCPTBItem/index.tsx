@@ -1,4 +1,5 @@
 import React from "react";
+import PauseIcon from "assets/icons/player/pauseIcon.svg";
 import PlayIcon from "assets/icons/player/playIcon.svg";
 import { styles } from "components/BodyContent/BodyContentContainer/BCCPlayList/BCCPTableBody/BCCPTBItem/index.styles.ts";
 import { BDPlaylistData } from "lib/mock/BodyContent/BDPlaylistMock.ts";
@@ -17,6 +18,10 @@ const BCCPTBItem = ({
   music,
 }: BDPlaylistData) => {
   const setSong = usePlayerStore((state) => state.setSong);
+  const currentMusic = usePlayerStore((state) => state.currentSong);
+  const isPlayingMusic = usePlayerStore((state) => state.isPlaying);
+
+  const isPlayCurrentSong = isPlayingMusic && currentMusic === music;
 
   return (
     <ContainerSC>
@@ -25,7 +30,8 @@ const BCCPTBItem = ({
           handleClick={() => setSong(music)}
           borderRadius={100}
           padding={9}>
-          <PlayIcon />
+          {isPlayCurrentSong && <PauseIcon />}
+          {!isPlayCurrentSong && <PlayIcon />}
         </ButtonImgUI>
       </td>
       <td>

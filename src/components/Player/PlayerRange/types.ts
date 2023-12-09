@@ -3,7 +3,11 @@ export interface InputRangeProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+export interface InputRangeVolumeProps extends InputRangeProps {
+  handleMute: () => void;
+}
+
 export interface PlayerRangeProps {
   progress: InputRangeProps;
-  volume: InputRangeProps;
+  volume: InputRangeVolumeProps;
 }

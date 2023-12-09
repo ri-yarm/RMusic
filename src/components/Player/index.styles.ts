@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 
-const ContainerSC = styled.div`
+const ContainerSC = styled.div<{ haveMusic: boolean }>`
   width: 100%;
   height: 110px;
 
-  display: flex;
+  display: ${({ haveMusic }) => (haveMusic ? "flex" : "none")};
   align-items: center;
   //justify-content: space-between;
 

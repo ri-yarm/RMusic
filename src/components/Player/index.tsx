@@ -11,24 +11,31 @@ import { usePlayerStore } from "store/index.ts";
 const Player = () => {
   const currentSong = usePlayerStore((state) => state.currentSong);
 
+  const isPlaying = usePlayerStore((state) => state.isPlaying);
+  const setIsPlay = usePlayerStore((state) => state.setIsPlay);
+  const setIsPause = usePlayerStore((state) => state.setIsPause);
+
   const [sound, setSound] = useState<Howl | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.8);
   const [progress, setProgress] = useState<number>(0);
+  const [isMuted, setIsMuted] = useState<boolean>(false);
 
   useEffect(() => {
     const sound = new Howl({
+      preload: true,
+      autoplay: true,
+
       src: [`${RootMusicDir}${currentSong}`],
       html5: true,
 
       onplay: () => {
-        setIsPlaying(true);
+        setIsPlay();
       },
       onpause: () => {
-        setIsPlaying(false);
+        setIsPause();
       },
       onend: () => {
-        setIsPlaying(false);
+        setIsPause();
         setProgress(0);
       },
       onseek: () => {
@@ -44,7 +51,6 @@ const Player = () => {
   }, [currentSong]);
 
   useEffect(() => {
-    // Обновляем ползунок каждые 100 миллисекунд
     const interval = setInterval(() => {
       if (sound && isPlaying) {
         setProgress(sound.seek() / sound.duration());
@@ -78,7 +84,23 @@ const Player = () => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
     if (sound) {
-      sound.volume(newVolume);
+      if (!isMuted) {
+        sound.volume(newVolume);
+      }
+    }
+  };
+
+  const handleMute = () => {
+    if (sound) {
+      const newMuteState = !isMuted;
+      setIsMuted(newMuteState);
+      if (newMuteState) {
+        setVolume(0);
+        sound.volume(0);
+      } else {
+        setVolume(0.8);
+        sound.volume(0.8);
+      }
     }
   };
 
@@ -91,7 +113,7 @@ const Player = () => {
   };
 
   return (
-    <ContainerSC>
+    <ContainerSC haveMusic={!!currentSong}>
       <ImgSC src={CreateBusinessImg} />
       <InfoContainerSC>
         <PlayAuthor />
@@ -102,7 +124,11 @@ const Player = () => {
         />
         <PlayerRange
           progress={{ value: progress, onChange: handleProgressChange }}
-          volume={{ value: volume, onChange: handleVolumeChange }}
+          volume={{
+            value: volume,
+            onChange: handleVolumeChange,
+            handleMute: handleMute,
+          }}
         />
       </InfoContainerSC>
     </ContainerSC>

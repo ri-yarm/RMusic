@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CreateBusinessImg from "assets/images/BodyContent/BCAside/CreateBusiness.jpg";
 import { styles } from "components/Player/index.styles.ts";
 import PlayAuthor from "components/Player/PlayerAuthor";
 import PlayerControl from "components/Player/PlayerControl";
@@ -12,6 +11,7 @@ import { usePlayerStore } from "store/index.ts";
 
 const Player = () => {
   const currentSong = usePlayerStore((state) => state.currentSong);
+  const infoSong = usePlayerStore((state) => state.info);
   const setCurrentSong = usePlayerStore((state) => state.setSong);
 
   const isPlaying = usePlayerStore((state) => state.isPlaying);
@@ -56,7 +56,11 @@ const Player = () => {
           } else {
             // В противном случае воспроизводите следующую песню, если она доступна
             if (index < playlist.length - 1) {
-              setCurrentSong(playlist[index + 1].music);
+              setCurrentSong(playlist[index + 1].music, {
+                title: playlist[index + 1].title,
+                author: playlist[index + 1].author,
+                img: playlist[index + 1].img,
+              });
             }
           }
         },
@@ -142,14 +146,22 @@ const Player = () => {
   const playNextSong = () => {
     const index = playlist.findIndex((song) => song.music === currentSong);
     if (index !== -1 && index < playlist.length - 1) {
-      setCurrentSong(playlist[index + 1].music);
+      setCurrentSong(playlist[index + 1].music, {
+        title: playlist[index + 1].title,
+        author: playlist[index + 1].author,
+        img: playlist[index + 1].img,
+      });
     }
   };
 
   const playPreviousSong = () => {
     const index = playlist.findIndex((song) => song.music === currentSong);
     if (index > 0) {
-      setCurrentSong(playlist[index - 1].music);
+      setCurrentSong(playlist[index - 1].music, {
+        title: playlist[index + 1].title,
+        author: playlist[index + 1].author,
+        img: playlist[index + 1].img,
+      });
     }
   };
 
@@ -159,9 +171,9 @@ const Player = () => {
 
   return (
     <ContainerSC haveMusic={!!currentSong}>
-      <ImgSC src={CreateBusinessImg} />
+      <ImgSC src={infoSong?.img} />
       <InfoContainerSC>
-        <PlayAuthor />
+        <PlayAuthor info={infoSong} />
         <PlayerControl
           isPlaying={isPlaying}
           isRepeat={isRepeat}

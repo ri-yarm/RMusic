@@ -54,7 +54,7 @@ const BCCPTBItem = ({
     <ContainerSC>
       <td>
         <ButtonImgUI
-          handleClick={() => setSong(music)}
+          handleClick={() => setSong(music, { title, author, img })}
           borderRadius={100}
           padding={9}>
           {isPlayCurrentSong && <PauseIcon />}

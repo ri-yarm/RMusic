@@ -20,6 +20,7 @@ const Player = () => {
   const [volume, setVolume] = useState<number>(0.8);
   const [progress, setProgress] = useState<number>(0);
   const [duration, setDuration] = useState<string | null>(null);
+  const [currentTime, setCurrentTime] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ const Player = () => {
         setProgress(0);
       },
       onseek: () => {
-        setProgress(sound.seek() / sound.duration());
+        setProgress(sound.seek());
       },
     });
 
@@ -57,7 +58,11 @@ const Player = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound && isPlaying) {
-        setProgress(sound.seek() / sound.duration());
+        const currentTimeAudio = sound.seek();
+        setProgress(currentTimeAudio / sound.duration());
+
+        const formattedCurrentTime = formatDuration(currentTimeAudio);
+        setCurrentTime(formattedCurrentTime);
       }
     }, 150);
 
@@ -131,6 +136,7 @@ const Player = () => {
             value: progress,
             onChange: handleProgressChange,
             duration: duration,
+            currentTime: currentTime,
           }}
           volume={{
             value: volume,

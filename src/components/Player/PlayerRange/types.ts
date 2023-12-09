@@ -9,6 +9,7 @@ export interface InputRangeVolumeProps extends InputRangeProps {
 
 export interface InputRangeProgressProps extends InputRangeProps {
   duration: string | null;
+  currentTime: string | null;
 }
 
 export interface PlayerRangeProps {

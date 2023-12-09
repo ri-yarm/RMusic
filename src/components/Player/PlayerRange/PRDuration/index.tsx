@@ -5,9 +5,16 @@ import { ColorsScheme } from "styles/Namespace/ColorsScheme.ts";
 import InputRageUI from "UI/InputRangeUI";
 import T500 from "UI/TypographyUI/TitleUI/500";
 
-const PRDuration = ({ value, onChange, duration }: InputRangeProgressProps) => (
+const PRDuration = ({
+  value,
+  onChange,
+  duration,
+  currentTime,
+}: InputRangeProgressProps) => (
   <ContainerSC>
-    <T500>03:41</T500>
+    <TimeContainerSC>
+      <T500 style={{ width: "100%" }}>{currentTime}</T500>
+    </TimeContainerSC>
     <InputRageUI
       value={value}
       onChange={onChange}
@@ -15,10 +22,14 @@ const PRDuration = ({ value, onChange, duration }: InputRangeProgressProps) => (
       max={1}
       step={0.01}
     />
-    <T500 color={ColorsScheme.GRAY}>{duration}</T500>
+    <TimeContainerSC>
+      <T500 style={{ width: "100%" }} color={ColorsScheme.GRAY}>
+        {duration}
+      </T500>
+    </TimeContainerSC>
   </ContainerSC>
 );
 
-const { ContainerSC } = styles;
+const { ContainerSC, TimeContainerSC } = styles;
 
 export default React.memo(PRDuration);

@@ -19,6 +19,9 @@ const TextContainerSC = styled.div`
 
 const ImgSC = styled.img`
   border-radius: 8px;
+
+  max-width: 45px;
+  max-height: 45px;
 `;
 
 export const styles = { ContainerSC, TitleContainerSC, TextContainerSC, ImgSC };
